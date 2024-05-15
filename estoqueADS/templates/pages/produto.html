@@ -53,6 +53,11 @@
                     <div class="card border shadow">
                         <div class="card-body">
                             <h1>Produto: {{ detalhe.nome }}</h1>
+                            {% if detalhe.imagem %}
+                            <div class="card" style="width: 30rem;">
+                                <img class="card-img-top" src="{{detalhe.imagem.url}}" alt="Card image cap">
+                            </div>
+                            {% endif %}
                             <h2>{{ detalhe.categoria }}</h2>
                             <h2>{{ detalhe.quantidade }}</h2>
                             <h2>{{ detalhe.codigo }}</h2>

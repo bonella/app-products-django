@@ -52,6 +52,10 @@
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
             </div>
             <div class="mb-3">
+                <label for="image" class="form-label">Imagem</label>
+                <input type="file" class="form-control" id="image" name="image" placeholder="Imagem">
+            </div>
+            <div class="mb-3">
                 <label for="categoria" class="form-label">Categoria</label>
                 <select class="form-select" id="categoria" name="categoria">
                     {% for categoria in categorias %}

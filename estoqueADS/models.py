@@ -10,6 +10,7 @@ class Categoria(models.Model):
 class Produtos(models.Model):
     criador = models.ForeignKey(User, on_delete=models.CASCADE)
     nome = models.CharField(max_length=255)
+    imagem = models.ImageField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, blank=True)
     preco = models.DecimalField(decimal_places=2, max_digits=9)
     descricao = models.TextField()
@@ -20,3 +21,7 @@ class Produtos(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    class Meta:
+        verbose_name = "Produto"
+        verbose_name_plural = "Produtos"

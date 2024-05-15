@@ -14,22 +14,22 @@ def adicionar_produto(request):
 
     if request.method == "POST":
         nome = request.POST['nome']
+        imagem = request.FILES.get('image')
         preco = request.POST['preco']
         descricao = request.POST['descricao']
         quantidade = request.POST['quantidade']
         categoria = request.POST['categoria']
         codigo = request.POST['codigo']
         em_estoque = False
-        print(type(preco))
-        print(type(quantidade))
-        print(type(codigo))
-        print(type(em_estoque))
+        print(type(imagem))
+        print(imagem)
         if int(quantidade) > 0:
             em_estoque = True 
         data_criacao = datetime.now()
         Produtos.objects.create(
             criador_id=request.user.id,
             nome=nome,
+            imagem=imagem,
             categoria_id=categoria,
             preco=preco,
             descricao=descricao,
