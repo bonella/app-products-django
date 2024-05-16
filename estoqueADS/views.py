@@ -6,7 +6,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(redirect_field_name='login')
 def index(request):
-    produtos = Produtos.objects.filter(criador_id=request.user.id)
+    query = request.GET.get('q', '')
+    print(query)
+    produtos = Produtos.objects.filter(criador_id=request.user.id, nome__icontains=query).order_by('id')
     return render(request, 'pages/index.html', {'produtos':produtos})
 
 @login_required(redirect_field_name='login')
