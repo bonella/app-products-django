@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-nsf@g!(=i8n7wsv^o45k&yb-q0vy@96t9v=5734pacoiw3yw*y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', '192.168.1.*']
+# ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', '192.168.1.*', '10.10.*.*', '*']
 ALLOWED_HOSTS = ['*']   # LIBERA TODAS REDES 
 
 
